@@ -22,8 +22,10 @@ jobs:
           git remote add gitlab "$GL_REPO_URL"
           git config user.name "GitHub Sync Bot"
           git config user.email "sync@github-actions"
-          git push gitlab --all --force-with-lease
-          git push gitlab --tags --force-with-lease
+          # git push gitlab --all --force-with-lease
+          # git push gitlab --tags --force-with-lease
+          git push gitlab --all 
+          git push gitlab --tags
         env:
           GL_REPO_URL: https://oauth2:${{ secrets.GL_PAT }}@gitlab.kuleuven.be/wet/ximera/ximeraworkshop-github.git
 
