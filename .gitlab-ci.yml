@@ -4,7 +4,7 @@ variables:
   NB_JOBS: 3                                           # Degree of parallelism  (used by xmlatex)
   XMLATEX: "xmlatex"                                   # Command to run
   # XMLATEX: "./xmScripts/xmlatex.test"                  # Command to run
-  XIMERA_BASENAME: "workshop"                              # Name under which this repo is to be published
+  XIMERA_BASENAME: "workshop-github"                              # Name under which this repo is to be published
   XIMERA_NAME: "workshop"                                  # will be set/overwritten infra!
   XIMERA_URL: "https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/"    # ximeraServer on which to publish 
   # XMDEPLOY: "demo.tex"
