@@ -1,0 +1,85 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Wim Obbels}
+	\xmtitle{Ximera Failcase}{Wat werkt er (nog?) niet?}
+	\label{xim:failcase}
+
+\section {Mathmode en co}
+
+Mathmode wordt online via MathJAX getoond. Dat werkt tamelijk goed, maar
+\begin{itemize}
+\item \textit{binnen} \verb|\text| is slechts een erg beperkte TeX-syntax mogelijk!
+
+Bijvoorbeeld: \verb|\text{Dit is \textit{italic}}| werkt in TeX, maar NIET in MathJax!
+Bijvoorbeeld: 
+$$
+({\color{blue}k} \text{ wordt } {\color{blue}l-1})
+$$
+werkt, maar het volgende niet:
+$$
+\text{({\color{blue}$k$} wordt  {\color{blue}$l-1$})}
+$$
+
+ 
+\item  \verb|\hfill| lijkt niet (correct) te werken
+\item Ximera heeft een truuk om ook \verb|\newcommand| te doen werken in MathJAX
+\item Ximera implementeert (via wat geknoei!) \verb|\answer| is MathJax 2.x (maar, dat werkt NIET in MathJAX 3.x)
+\end{itemize}
+
+\section{Antwoorden en oplossingen}
+
+\begin{itemize}
+\item in \verb|\answer| werkt \verb|\dfrac| niet (juist antwoord wordt fout gerekend!); gebruik \verb|\frac|
+\end{itemize}
+
+\section {Tabellen en co}
+
+\begin{example}[align en tag doen soms raar?]
+Volgende \verb|align| resized niet correct in MathJAX: hij springt rechts uit het kader bij relatief kleine fonts (resolutie).
+
+
+Allicht komt het probleem van de \verb|tag|. Die werkt trouwens ook niet goed samen met \verb|hyperref| lijkt het, want een verwijzing met \verb|\hyperref[fail:test_tag]{mijn tekst}| lijkt online(!) de tekst die bij de \verb|label| hoort te tonen, in plaats van de tekst in de \verb|\hyperref|: zie \hyperref[fail:test_tag]{deze omschrijving}.
+
+Conclusie: vermijd \verb|\tag| (of zoek het uit, en pas deze tekst aan!)
+
+\begin{align*}
+		\important{\frac{a}{b} = \frac{c}{d}}  &\iff \important{ad = bc} 
+			 \tag*{gelijkheid van (getalwaarde van) breuken (kruisproduct)}\label{fail:test_tag}\\ \\
+		\frac{a}{b}+\frac{c}{d} \quad&\perdef\quad \frac{ad+cb}{bd} 
+			 \tag*{ optelling (op gelijke noemer brengen)}\label{fail:optelling breuken} \\ \\
+		\frac{a}{b} \cdot \frac{c}{d} \quad&\perdef\quad \frac{a\cdot c}{b\cdot d} 
+			 \tag*{vermenigvuldiging (teller $\times$ teller, noemer $\times$ noemer) }\label{fail: vermenigvuldiging breuken} \\ \\
+		\frac{a}{b} : \frac{c}{d} \quad&\perdef\quad \frac ab \cdot \frac dc = \frac{a\cdot d}{b\cdot c} 
+		  \tag*{deling (maal omgekeerde)}\label {fail: deling breuken}  \\
+\end{align*}
+\end{example}
+
+\begin{example}[tabular wordt erg breed online]
+
+Een \verb|tabular| heeft de neiging om online de volledige breedte in te nemen. Dat is meestal niet mooi. Een alternatief is om \verb|array|'s te gebruiken, die resizen wel correct (maar, ze zijn natuurlijk mathmode!)
+
+Met \verb|tabular| (en \verb|center|):
+\begin{center}
+\begin{tabular}{lr}
+ x & 1 \\
+ y & 2 \\
+ z & 1
+\end{tabular}
+\end{center}
+
+Met \verb|array|:
+$$
+\begin{array}{lr}
+ x & 1 \\
+ y & 2 \\
+ z & 1
+\end{array}
+$$
+\end{example}
+
+\section {Nummering en co}
+
+De nummering van parts, secties, definities etc. wordt (minstens deels) zowel door TeX (voor pdf)  als door Ximera (voor online) gedaan. Dat is inherent wat subtiel, en er kunnen ooit verschillen opduiken. Ook dynamisch secties/ximera's/... al dan niet includen (pdf/online/handout/...) kan en zal mogelijk issues opleveren met nummering/paginering
+
+\end{document}

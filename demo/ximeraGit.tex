@@ -1,0 +1,106 @@
+\documentclass{ximera}
+\input{../preamble.tex}
+\addPrintStyle{..}
+
+\begin{document}\label{act:ximeraGit}
+    \author{Wim Obbels}
+	\xmtitle{Git Setup}{Minimale inleiding voor git. Initiële setup}
+    
+\subsection{Toegang tot de KULeuven gitlab server}\nl 
+
+    \begin{itemize}
+        \item De broncode van de Ximera-cursussen (en de Rumbas oefeningen) wordt beheerd in verschillende repo's op de KU Leuven gitlab server op \url{gitlab.kuleuven.be}. 
+        \item Iedereen met een KU Leuven account kan inloggen op \url{gitlab.kuleuven.be} met het u-nummer (via de centrale login van KU Leuven), 
+               maar je hebt specifieke toegangsrechten nodig tot de Ximera repo's.
+        \item Zodra iemand éénmaal is ingelogd, kan hem/haar toegang gegeven worden:
+        \begin{itemize}
+            \item tot repo \url{https://gitlab.kuleuven.be/monitoraat-wet/ximeraLatex} (als 'Reporter', enkel nodig voor een lokale LaTeX-setup)
+            \item tot repo \url{https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde} of equivalent als 'Reporter' om te lezen, maar allicht als 'Developer' om te editeren
+        \end{itemize}
+        \item Om  een repo te 'clonen' op je eigen PC, is het voorlopig nodig dat je ook een lokaal gitlab-paswoord instelt. Zie verder.
+    \end{itemize}
+        
+
+
+\subsection{Installatie van een GIT Client}\nl
+
+
+Er zijn verschillende manieren om gebruik te maken van git:
+\begin{itemize}
+	\item Via de webinterface \url{https://gitlab.kuleuven.be} 
+    \begin{itemize}
+		\item  Voordeel: inloggen met u-nummer, geen installatie nodig, steeds de meest up-to-date versie van de TeX-code, extra functionaliteit (pipelines, issues, …) die niet standaard in de git-clients werken
+		\item  Nadeel: je kan de code niet 'uitchecken' (clonen/pullen), en dus zijn uitgebreide wijzigingen moeilijk. Kleine aanpassingen kunnen wel makkelijk, maar (syntax-)fouten zijn pas zichtbaar na commit-en-build van de code.
+		\item  Sinds eind 2022 gebruikt gitlab (een browser-versie van) VS Code als editor. Dat maakt editeren-in-de-browser ongeveer even handig als in een lokale applicatie op je PC. Voorlopig is het jammer genoeg nog niet mogelijk om ook te compilen in de browser, en je ziet (syntax-)fouten dus nog steeds pas na compile-en-build. Hopelijk lossen Codespaces dit binnenkort op....
+        \end{itemize}
+
+    \item Via Visual Studio Code (download via https://code.visualstudio.com/). Dit bevat onmiddellijk ook een handige \LaTeX-omgeving, en ondersteunt git en Docker. De aanbevolen methode.
+    \\ In de Toledo Community 'Basiswiskunde@KULeuven' vind je een gedetailleerde handleiding.
+	\item Via \textbf{Github Desktop } (of een andere git client kan ook)
+    
+		 Installatie door download vanaf \url{https://desktop.github.com}. Hiervoor zijn geen adminrechten nodig op de PC.
+
+         Alternatief Smartgit, dat via Software Center kan worden geïnstalleerd.
+
+	
+        \begin{itemize}	
+         \item Voordeel: Zeer eenvoudige interface, je moet niet zoeken naar de juiste knop
+         \item Nadeel: complexere operaties zijn moeilijker, maar die heb je waarschijnlijk niet nodig (merge, cherry-pick, revert, ...)
+    \end{itemize}         
+    
+	\item Via Git bash (installatie via Software Center)
+		
+         Dit is een command line client, waarin je commando's moet intypen
+    
+        \begin{itemize}	
+         \item Voordeel: je kan in een Powershell-scherm commando's gebruiken die je via Google vond om problemen op te lossen ...
+         \item Nadeel: je moet in een Powershell-scherm commando's gebruiken. Dit schrikt sommige mensen ten onrechte af.
+		 \end{itemize}
+
+\end{itemize}
+
+\subsection{Installatie van de gewenste GIT Repositories (OBSOLETE)}\nl
+
+OPMERKING: zie handleiding in Toledo !!
+
+\begin{itemize}
+\item Stel een gitlab-specifiek paswoord in voor je u-nummer via \url{https://gitlab.kuleuven.be/profile}  (Linkermenu, optie 'Password'.)
+
+ Dit is een paswoord dat ENKEL IN en VOOR GITLAB aan je u-nummer is gekoppeld, en ENKEL gebruikt wordt om (typisch één keer!) repositories te clonen op je PC. Gebruik hiervoor best NIET je echte paswoord, maar een ander (eenvoudig ...) paswoord. Als je het later vergeet kan je via \url{https://gitlab.kuleuven.be/profile} steeds een nieuw aanvragen.
+
+(Alternatief voor wie het iets zegt: gebruik (je) ssh-key(s)).
+\item Clone het zomercursus-wiskunde repository
+
+\verb|https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde.git|
+
+\begin{itemize}
+
+\item Start Github Desktop
+\item Kies 'Clone a repository', en kies 'URL' (en dus NIET Github.com of Github Enterprise server) 
+\item Vul 'https://gitlab.kuleuven.be/monitoraat-wet/zomercursus-wiskunde.git' in als Repository URL
+\item Kies '....\verb|\Documents\git\zomercursus-wiskunde|' als 'Local Path' (of iets gelijkaardigs: een LOKAAL pad. Het is niet zinval dit op shared drives te doen, backup is niet nodig als je regelmatig commit.)
+\item Druk op 'Clone'. Er worden een username/paswoord gevraagd: kies je u-nummer (of r-nummer) (ZONDER @kuleuven.be), en het paswoord dat je hierboven hebt ingesteld op gitlab.kuleuven.be
+\item Alle TeX-code, met de volledige historiek, van de zomercursus-wiskunde wordt gedownload naar je PC, in de folder die je hebt opgegeven.
+
+\end{itemize}
+
+\item Clone het ximeraLatex repository  (opdat \verb|\documentclass{ximera}| zou werken)
+
+\verb|https://gitlab.kuleuven.be/monitoraat-wet/ximeraLatex.git|
+
+Voor MikTeX gebruikers (meer info: https://miktex.org/faq/local-additions):
+\begin{itemize}
+\item Maak een folder 'mytexmf' onder je Documents (tenzij je elders al een 'lokale TeX-configuratie' hebt opgezet: dan gebruikt je die)
+\item Maak daarin een subfolder 'tex'
+\item Maak daarin een subfolder 'latex'
+\item Maak daarin met Github Desktop een clone van https://gitlab.kuleuven.be/monitoraat-wet/ximeraLatex.git, met naam (of dus folder) 'ximeraLatex'
+\item Je hebt nu minstens ook een bestand \verb|mytexmf\tex\latex\ximeraLatex\xourse.cls|
+\item Start MikTeX Console (NIET als admin), onder Settings' en 'Directories' voeg je (via het plus-teken) de folder 'mytexmf' toe. Je sluit MikTeX Console terug af
+\item Met een beetje geluk  kan je bv AUTEUR.tex pdf-latexen (in je favoriete TeX-editor/omgeving)
+\end{itemize}
+Voor LiveTeX gebruikers: raadpleeg Google voor het installeren van extra .sty bestanden
+\item Je kan nu eventueel ook andere repositories downloaden van github of elders. 
+\end{itemize}
+
+
+\end{document}

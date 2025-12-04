@@ -1,0 +1,72 @@
+image: ghcr.io/ximeraproject/ximeralatex:v2.7.8-full
+
+variables:
+  NB_JOBS: 3                                           # Degree of parallelism  (used by xmlatex)
+  XMLATEX: "xmlatex"                                   # Command to run
+  # XMLATEX: "./xmScripts/xmlatex.test"                  # Command to run
+  XIMERA_BASENAME: "workshop"                              # Name under which this repo is to be published
+  XIMERA_NAME: "workshop"                                  # will be set/overwritten infra!
+  XIMERA_URL: "https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/"    # ximeraServer on which to publish 
+  # XMDEPLOY: "demo.tex"
+
+stages:
+  - build
+  - deploy-test
+  - deploy-prod
+
+build_bake_html_job:
+  stage: build
+  script:
+      - $XMLATEX bake --compile html -j 3  $XMDEPLOY
+  allow_failure: true
+  cache:
+    untracked: true
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+  artifacts: # Also save untracked files
+    untracked: true
+    expire_in: '23h20min' # to be checked
+
+build_bake_pdf_job:
+  stage: build
+  script:
+      - $XMLATEX bake --compile handout.pdf -j 3  $XMDEPLOY
+      - $XMLATEX bake -f --nodependencies --compile handout.pdf -j 3  $XMDEPLOY
+  allow_failure: true
+  cache:
+    untracked: true
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+  artifacts: # Also save untracked files
+    untracked: true
+    expire_in: '23h20min' # to be checked
+
+build_serve_test:
+  stage: deploy-test
+  script:
+      - BRANCHPART=`echo "*$CI_COMMIT_REF_NAME" | tr '[:upper:]' '[:lower:]'` # Add star and lowercase
+      - XIMERA_NAME=$XIMERA_BASENAME""$BRANCHPART 
+      - git fetch --unshallow #
+      - $XMLATEX name 
+      - $XMLATEX ghaction -j 3 $XMDEPLOY
+  allow_failure: true
+  # cache:
+  #   untracked: true
+  #   key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+  artifacts: # Also save untracked files
+    untracked: true
+    # expire_in: '23h20min' # to be checked
+
+deploy_serve_prod:
+  stage: deploy-prod
+  script:
+      - XIMERA_NAME=$XIMERA_BASENAME
+      - git rev-parse --is-shallow-repository | grep -q true && git fetch --unshallow 
+      - $XMLATEX name 
+      - $XMLATEX ghaction -j 3 $XMDEPLOY
+  cache:
+    untracked: true
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+  artifacts:
+    untracked: true
+    expire_in: '24h20min'
+  allow_failure: false
+  when: manual
