@@ -44,7 +44,7 @@ build_serve_test:
   script:
       - BRANCHPART=`echo "*$CI_COMMIT_REF_NAME" | tr '[:upper:]' '[:lower:]'` # Add star and lowercase
       - XIMERA_NAME=$XIMERA_BASENAME""$BRANCHPART 
-      - git fetch --unshallow #
+      - git rev-parse --is-shallow-repository | grep -q true && git fetch --unshallow 
       - $XMLATEX name 
       - $XMLATEX ghaction -j 3 $XMDEPLOY
   allow_failure: true
