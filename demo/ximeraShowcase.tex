@@ -26,7 +26,7 @@ Dit document bevat een overzicht van functionaliteit van Ximera. Het kan bovendi
 \end{onlineOnly}
 
 
-\section{Oefeningen en interactieve inhoud}\label{sec:showCase:voorbeelden_problemen}
+% \section{Oefeningen en interactieve inhoud}\label{sec:showCase:voorbeelden_problemen}
 
 \begin{exercise}    
     Los volgende vragen op die gebruik maken van het commando \verb|\answer| (en vergelijk telkens de \LaTeX code met de PDF en de online versie):
@@ -197,59 +197,59 @@ Dit document bevat een overzicht van functionaliteit van Ximera. Het kan bovendi
 	\end{question}
 \end{exercise}
 
-\section{Hyperlinks en verwijzingen}
+% \section{Hyperlinks en verwijzingen}
 
-Merk nu op dat we u naar allerlei plaatsen kunnen verwijzen: 
-% PAS OP: links reageren anders naargelang de target al dan niet in de PDF zit !!!
-% test voorzichtig en grondig
-\begin{definition}\label{itm:showCase:def1} $2 \perdef 1+1$
-\end{definition}	
+% Merk nu op dat we u naar allerlei plaatsen kunnen verwijzen: 
+% % PAS OP: links reageren anders naargelang de target al dan niet in de PDF zit !!!
+% % test voorzichtig en grondig
+% \begin{definition}\label{itm:showCase:def1} $2 \perdef 1+1$
+% \end{definition}	
 
-\begin{align}
- 1 + 1 & = 2 \label{links_test1} \\
- 2 + 2 & = 4 \label{links_test2}
-\end{align}
+% \begin{align}
+%  1 + 1 & = 2 \label{links_test1} \\
+%  2 + 2 & = 4 \label{links_test2}
+% \end{align}
  
 
-{
-\scriptsize
-\begin{tabular}{lcccc}
-	Eerste oefening & \verb|\ ref{itm:showCase:eerste_oefening}| & \verb|\hyperref[itm:showCase:eerste_oefening]{tekst naar keuze}| \\
-	                    & \ref{itm:showCase:eerste_oefening}  & \hyperref[itm:showCase:eerste_oefening]{voorbeeld hierboven} \\
-	\hline
-	Laatste oefening & \verb|\ ref{itm:showCase:laatste_oefening}| & \verb|\hyperref[itm:showCase:laatste_oefening]{tekst naar keuze}| \\
-	                    & \ref{itm:showCase:laatste_oefening}  & \hyperref[itm:showCase:laatste_oefening]{voorbeeld hierboven} \\
-	\hline
-	Volgende sectie & \verb|\ ref{sec:showCase:integratie}| &  \verb|\hyperref[sec:showCase:integratie]{tekst naar keuze}| \\
-	              & \ref{sec:showCase:integratie}  & \hyperref[sec:showCase:integratie]{de sectie over integratie} \\
-	\hline
-	Vorige align & \verb|\ ref{links_test1}| &  \verb|\hyperref[links_test1]{tekst naar keuze}| \\
-	              & \ref{links_test1}  & \hyperref[links_test1]{omdat 1+1=2} \\
+% {
+% \scriptsize
+% \begin{tabular}{lcccc}
+% 	Eerste oefening & \verb|\ ref{itm:showCase:eerste_oefening}| & \verb|\hyperref[itm:showCase:eerste_oefening]{tekst naar keuze}| \\
+% 	                    & \ref{itm:showCase:eerste_oefening}  & \hyperref[itm:showCase:eerste_oefening]{voorbeeld hierboven} \\
+% 	\hline
+% 	Laatste oefening & \verb|\ ref{itm:showCase:laatste_oefening}| & \verb|\hyperref[itm:showCase:laatste_oefening]{tekst naar keuze}| \\
+% 	                    & \ref{itm:showCase:laatste_oefening}  & \hyperref[itm:showCase:laatste_oefening]{voorbeeld hierboven} \\
+% 	\hline
+% 	Volgende sectie & \verb|\ ref{sec:showCase:integratie}| &  \verb|\hyperref[sec:showCase:integratie]{tekst naar keuze}| \\
+% 	              & \ref{sec:showCase:integratie}  & \hyperref[sec:showCase:integratie]{de sectie over integratie} \\
+% 	\hline
+% 	Vorige align & \verb|\ ref{links_test1}| &  \verb|\hyperref[links_test1]{tekst naar keuze}| \\
+% 	              & \ref{links_test1}  & \hyperref[links_test1]{omdat 1+1=2} \\
 
-	\hline	
-	Een andere activity  & \verb|\ ref{act:ximeraArchitectuur}| &  \verb|\hyperref[act:ximeraArchitectuur]{tekst naar keuze}| \\
-	                     & \ref{act:ximeraArchitectuur} & \hyperref[act:ximeraArchitectuur]{deeltje over Architectuur} \\
-	\hline
-	Een voorbeeld elders & \verb|\ ref{vb:gebruik_omgevingen}| &  \verb|\hyperref[vb:gebruik_omgevingen]{tekst naar keuze}| \\
-	                     & \ref{vb:gebruik_omgevingen}  &  \hyperref[vb:gebruik_omgevingen]{tekst naar keuze} \\
-	\hline
-	Iets onbestaands & \verb|\ ref{xazerty}| &  \verb|\hyperref[xazerty]{tekst naar keuze}| \\
-	                 & \ref{xazerty}  &  \hyperref[xazerty]{deze link bestaat niet}
-\end{tabular}
-}
+% 	\hline	
+% 	Een andere activity  & \verb|\ ref{act:ximeraArchitectuur}| &  \verb|\hyperref[act:ximeraArchitectuur]{tekst naar keuze}| \\
+% 	                     & \ref{act:ximeraArchitectuur} & \hyperref[act:ximeraArchitectuur]{deeltje over Architectuur} \\
+% 	\hline
+% 	Een voorbeeld elders & \verb|\ ref{vb:gebruik_omgevingen}| &  \verb|\hyperref[vb:gebruik_omgevingen]{tekst naar keuze}| \\
+% 	                     & \ref{vb:gebruik_omgevingen}  &  \hyperref[vb:gebruik_omgevingen]{tekst naar keuze} \\
+% 	\hline
+% 	Iets onbestaands & \verb|\ ref{xazerty}| &  \verb|\hyperref[xazerty]{tekst naar keuze}| \\
+% 	                 & \ref{xazerty}  &  \hyperref[xazerty]{deze link bestaat niet}
+% \end{tabular}
+% }
 
-\begin{enumerate}
-%	\item Het eerste voorbeeld in verband met \verb|\answer|: via \ref{itm:showCase:voorbeeld_answer} (\verb|\ref|) of via \hyperref[itm:showCase:voorbeeld_answer]{hyperref}, waar je zelf de text kan kiezen.
-%	\item De vorige sectie: xx \ref{sec:showCase:voorbeelden_problemen} xx (met \verb|\ref|) of \hyperref[sec:showCase:voorbeelden_problemen]{vorige sectie} (met \verb|\hyperref[label]{vorige sectie}|)
-%	\item Een voorbeeld in een andere activity: via \verb|\ref| als xx \ref{vb:Gebruik van omgevingen} xx of via \verb|\hyperref[label]{een interessant voorbeeld}| als \hyperref[vb:Gebruik van omgevingen]{een interessant voorbeeld}
-	\item todo: toevoegen en testen van \verb|\tag|
-	\item todo: andere ref-systemen (varioref/hyperref/nameref/cleveref) 
-\end{enumerate}
+% \begin{enumerate}
+% %	\item Het eerste voorbeeld in verband met \verb|\answer|: via \ref{itm:showCase:voorbeeld_answer} (\verb|\ref|) of via \hyperref[itm:showCase:voorbeeld_answer]{hyperref}, waar je zelf de text kan kiezen.
+% %	\item De vorige sectie: xx \ref{sec:showCase:voorbeelden_problemen} xx (met \verb|\ref|) of \hyperref[sec:showCase:voorbeelden_problemen]{vorige sectie} (met \verb|\hyperref[label]{vorige sectie}|)
+% %	\item Een voorbeeld in een andere activity: via \verb|\ref| als xx \ref{vb:Gebruik van omgevingen} xx of via \verb|\hyperref[label]{een interessant voorbeeld}| als \hyperref[vb:Gebruik van omgevingen]{een interessant voorbeeld}
+% 	\item todo: toevoegen en testen van \verb|\tag|
+% 	\item todo: andere ref-systemen (varioref/hyperref/nameref/cleveref) 
+% \end{enumerate}
 
 
-\section{Integratie met andere omgevingen} \label{sec:showCase:integratie}
+% \section{Integratie met andere omgevingen} \label{sec:showCase:integratie}
 
-\subsection{Inleiding goniometrie}
+% \subsection{Inleiding goniometrie}
 
 We kunnen youtube filmpjes invoegen, bijvoorbeeld met een fascinerende inleiding tot de goniometrie:
 \begin{center}
@@ -328,17 +328,14 @@ In Sage kan je relatief eenvoudig de parametervergelijkingen van een cirkel best
 \end{onlineOnly}
 \end{comment}
 
-\section{Styling}
+% \section{Styling}
 	De online versie kan gestyled worden door css files toe te voegen:
 	\begin{itemize}
 		\item \verb|global.css| in de root map van de repository: alle activities in de repository gebruiken deze styling
 		\item \verb|xoursefilename.css| in de folder van xoursefilename.tex file: alle activities in de xourse gebruiken deze styling
-		\item \verb|activityfilename.css| in de folder van de activityfilename.tex file: styling specifiek voor 1 activity.
 	\end{itemize}
-	De \verb|ximeraShowcase.css| file specifieert in dit geval dat de questions niet alleen links maar ook rechts een paarse balk hebben. 
-    % niet het geval ...?
 
-\subsection{Voorbeelden van het gebruik van environments}
+% \subsection{Voorbeelden van het gebruik van environments}
 \begin{definition}[Absolute waarde]\label{showcase:absolutewaarde}
 	Voor een reëel getal $a\in\R$ definiëren we de \textit{absolute waarde} van $a$, genoteerd $|a|$, als
 	\[

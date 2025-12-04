@@ -1,11 +1,12 @@
 \documentclass{ximera}
 
 \begin{document}
-	\author{Wim Obbels}
-	\xmtitle{Ximera Failcase}{Wat werkt er (nog?) niet?}
-	\label{xim:failcase}
+	%\author{Wim Obbels}
+	% \xmtitle{Ximera Failcase}{Wat werkt er (nog?) niet?}
+	\xmtitle{Ximera Failcase}{}
+	%\label{xim:failcase}
 
-\section {Mathmode en co}
+% \section {Mathmode en co}
 
 Mathmode wordt online via MathJAX getoond. Dat werkt tamelijk goed, maar
 \begin{itemize}
@@ -27,13 +28,13 @@ $$
 \item Ximera implementeert (via wat geknoei!) \verb|\answer| is MathJax 2.x (maar, dat werkt NIET in MathJAX 3.x)
 \end{itemize}
 
-\section{Antwoorden en oplossingen}
+% \section{Antwoorden en oplossingen}
 
 \begin{itemize}
 \item in \verb|\answer| werkt \verb|\dfrac| niet (juist antwoord wordt fout gerekend!); gebruik \verb|\frac|
 \end{itemize}
 
-\section {Tabellen en co}
+% \section {Tabellen en co}
 
 \begin{example}[align en tag doen soms raar?]
 Volgende \verb|align| resized niet correct in MathJAX: hij springt rechts uit het kader bij relatief kleine fonts (resolutie).
@@ -78,7 +79,7 @@ $$
 $$
 \end{example}
 
-\section {Nummering en co}
+% \section {Nummering en co}
 
 De nummering van parts, secties, definities etc. wordt (minstens deels) zowel door TeX (voor pdf)  als door Ximera (voor online) gedaan. Dat is inherent wat subtiel, en er kunnen ooit verschillen opduiken. Ook dynamisch secties/ximera's/... al dan niet includen (pdf/online/handout/...) kan en zal mogelijk issues opleveren met nummering/paginering
 

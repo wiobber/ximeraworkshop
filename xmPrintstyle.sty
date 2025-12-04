@@ -942,6 +942,8 @@
 \renewcommand{\theHsubsection}{\thetitlenumber.\thesubsection}   % for hyperref ...
 
 
+\makeatletter
+
 
 \let\oldhypertarget\hypertarget
 \let\oldhyperlink\hyperlink
@@ -1037,27 +1039,27 @@
 %
 % make ifnonewpage local
 %   (resumes and overwrites what's in xourse.cls)
-%
-\makeatletter
-\@ifclassloaded{xourse}    % only in xourses !!  (this could replace \isXourse )
-{
-\let\otherinput\input
-\renewcommand{\activity}[2][]{%
-    \setkeys{activity}{#1}%
-    \renewcommand{\input}[1]{}%
-    \ifnonewpage%
-       \begingroup\skip@preamble\otherinput{#2}\endgroup\par\vspace{\topsep}%
-    \else%
-       \begingroup\skip@preamble\otherinput{#2}\endgroup\clearpage%
-    \fi%
-    \let\input\otherinput%
-}%
-\ifxake%
-\renewcommand\activity[2][]{}%
-\fi%
-}
-{} % not in xourse
-\makeatother
+% %
+% \makeatletter
+% \@ifclassloaded{xourse}    % only in xourses !!  (this could replace \isXourse )
+% {
+% \let\otherinput\input
+% \renewcommand{\activity}[2][]{%
+%     \setkeys{activity}{#1}%
+%     \renewcommand{\input}[1]{}%
+%     \ifnonewpage%
+%        \begingroup\skip@preamble\otherinput{#2}\endgroup\par\vspace{\topsep}%
+%     \else%
+%        \begingroup\skip@preamble\otherinput{#2}\endgroup\clearpage%
+%     \fi%
+%     \let\input\otherinput%
+% }%
+% \ifxake%
+% \renewcommand\activity[2][]{}%
+% \fi%
+% }
+% {} % not in xourse
+% \makeatother
 
 
 % right align columns in matrices
