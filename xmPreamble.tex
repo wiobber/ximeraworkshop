@@ -665,8 +665,8 @@
 
 
 \ifdefined\HCode    % in html: always print
-      {\newenvironment*{basicOnly}{}{}}    % if yes: just print contents
-      {\newenvironment*{basicSkip}{}{}}    % if yes: just print contents
+      \newenvironment*{basicOnly}{}{}    % just print contents
+      \newenvironment*{basicSkip}{}{}    % just print contents
 \else
 
 \ifbool{printbasicversion}
