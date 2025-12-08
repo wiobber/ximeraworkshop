@@ -402,7 +402,8 @@
 %    \counterwithin*{subsubsection}{subsection}   % doesn't work ... ?
 %    \setcounter{subsubsection}{0}     %% !!! deze lijn helpt de bookmarks in PDF omzeep !!!!
 
-    \markboth{\thesectiontitlenumber\hspace{1em} \@title}{\thesectiontitlenumber\hspace{1em} \@title}   % fix wrong section on last page of activity
+    % 2025-12-08: causes exotic cursus2.tex:[l.8] Missing { inserted.            at <to be read again> <- }
+    %\markboth{\thesectiontitlenumber\hspace{1em} \@title}{\thesectiontitlenumber\hspace{1em} \@title}   % fix wrong section on last page of activity
 
     \thispagestyle{firstpage} 
     \afterpage{\thispagestyle{otherpage}} 
