@@ -1,0 +1,343 @@
+\documentclass{ximera}
+%\input{../preamble.tex}
+%\addPrintStyle{..}
+ 
+% \handouttrue    %% only for testing; do NOT commit
+% \setcounter{secnumdepth}{9}
+ 
+\begin{document}
+    \author{Zomercursus KU Leuven}
+    \xmtitle{Machten}{Definitie en eigenschappen van machten.}
+    \label{xim:machten}
+
+{\color{red} Hieronder zie je de code van de theorie over machten. Zo heb je een voorbeeld van de verschillende omgevingen die gebruikt kunnen worden. Volgens ons kan het wat duidelijker en beknopter. Voel je vrij om wat verbeteringen door te voeren!}
+ 
+\xmsection{Machten met een reëel grondtal en een gehele exponent}
+ 
+\begin{basicSkip}
+\begin{tabular}{lccr}
+    Net zoals \textit{vermenigvuldigen} 'herhaald optellen' is: &\hfill$3\times 2 \perdef 2 {\color{red}+} 2{\color{red}+} 2$ &en&  $n\times a = a{\color{red}+}a{\color{red}+}\dots {\color{red}+}a$ ($n$ keer),   
+    \\
+    is \textit{machtsverheffen} 'herhaald vermenigvuldigen': & \hfill$2^3 \perdef 2{\color{red}\times}2{\color{red}\times}2$ &en& $a^n \perdef a{\color{red}\times}a{\color{red}\times}\ldots{\color{red}\times}a$ ($n$ keer).
+\end{tabular}
+\end{basicSkip}
+ 
+\begin{definition}[Machtsverheffing met reëel grondtal en gehele exponent] \label{def:machten met gehele exponent} \nl
+     
+    %   \begin{itemize}
+        %   \item Zij $a\in\R$ en $n\in\N$.    
+        %   Voor $a\in\R$ en $n\in\N$
+        %   definiëren we de \textbf{$n$-de macht}  van een reëel getal $a$, genoteerd $a^n$, als
+        % (spreek uit: $a$  tot de macht $n$ of $a$ tot de $n$-de) met \emph{grondtal} $a$ en   \emph{exponent}
+         
+        De \textbf{$n$-de macht} van een reëel getal $a$, met $n \in \N$, genoteerd $a^n$, is
+        \[
+        \begin{array}{rll}
+            a^0  &\perdef  1 & \text{ als } a\neq 0 \\
+            \important{a^n} &\perdef \underbrace{a\cdot a\cdot\ldots\cdot a}_{n\text{ factoren}} & \text{ als }n\in\Nnul
+        \end{array}
+        \]
+        We noemen $a$ het \textbf{grondtal} en $n$ de \textbf{exponent}.
+         
+        %   \item Zij $a\in\Rnul$ en $n\in\N$.     
+        Als $a$ niet nul is,
+        definiëren we ook machten met \textit{negatieve} exponenten:
+        \[
+        \important{a^{-n}\perdef\frac{1}{a^n}}.
+        \]
+        %    \end{itemize}
+     
+    De uitdrukkingen $0^0$ en $0^{-n}$ zijn \textit{onbepaald} en hebben dus \textit{geen betekenis}.
+     
+\end{definition}
+%Merk op dat we de machten hierbij meteen hebben uitgebreid tot \textit{negatieve} exponenten.
+ 
+\begin{basicSkip}
+\begin{exercise}Bereken:\nl
+\begin{xmmulticols}[3]
+\begin{question} $    5^2 = \answer[onlineshowanswerbutton]{25}$\end{question}
+\begin{question} $   -5^2 = \answer[onlineshowanswerbutton]{-25}$\end{question}
+\begin{question} $ (-5)^2 = \answer[onlineshowanswerbutton]{25}$\end{question}
+\begin{question} $(2+3)^2 = \answer[onlineshowanswerbutton]{25}$\end{question}
+\begin{question} $2^2+3^2 = \answer[onlineshowanswerbutton]{13}$\end{question}
+\begin{question} $(2+3)^2 -(2^2+3^2) = \answer[onlineshowanswerbutton]{12}$\end{question}
+\begin{question} $ 2^{-1} = \answer[onlineshowanswerbutton]{0.5}$\end{question}
+\begin{question} $   10^3 = \answer[onlineshowanswerbutton]{1000}$\end{question}
+\begin{question} $10^{-3} = \answer[onlineshowanswerbutton]{0.001}$\end{question}
+ 
+\end{xmmulticols}
+\end{exercise}
+\end{basicSkip}
+ 
+\begin{basicSkip}
+\begin{remark}
+    Onmiddellijke gevolgen van de definities:
+\begin{xmmulticols}[2]
+    \begin{itemize}
+            \item $a^1= $ \onlineChoice{\choice{$1$}\choice{$0$}\choice[correct]{$a$}} voor alle $a\in\R$.
+            \item $a^0= $ \onlineChoice{\choice[correct]{$1$}\choice{$0$}\choice{$a$}} voor alle $a\in\Rnul$.
+            \item $0^n=0$ voor alle $n\in\Nnul$.
+            \item $a^{- 1}=\frac{1}{a}$ voor alle $a\in$ \onlineChoice{\choice{$\R$}\choice{$\Rplus$}\choice[correct]{$\Rnul$}}.
+            \item $0^z$ is niet gedefinieerd voor $z\in\Zmin$.
+            % \item $1^n=1$ voor alle $n\in$ \xmonlineChoice{\choice{$\N$}\choice[correct]{$\Z$}}.
+    \end{itemize}
+\end{xmmulticols}   
+\end{remark}
+\end{basicSkip}
+ 
+%\begin{xmuitweiding}[Herhaald optellen, vermenigvuldigen en machtsverheffen]
+%Men zou kunnen proberen de definities \lq vermenigvuldigen is herhaald optellen' en \lq machtsverheffen is herhaald vermenigvuldigen\rq zelf te herhalen, en ook iets te definiëren voor 'herhaald machtsverheffen'. Dat leidt tot een minder bekende, maar erg fascinerende operatie waarover je meer uitleg vindt op \link[Wikipedia]{https://nl.wikipedia.org/wiki/Knuths_pijlomhoognotatie}.
+%\end{xmuitweiding}
+ 
+\begin{xmuitweiding}[Nul tot de macht nul]
+Volgens de bovenstaande definitie is $0^0$ onbepaald. Dat is de meest algemeen geldende afspraak, maar in sommige contexten is het veel handiger om toch $0^0=1$ te stellen. Meer informatie op \link[Wikipedia]{https://en.wikipedia.org/wiki/Zero_to_the_power_of_zero}.
+\end{xmuitweiding}
+ 
+\providecommand{\rod}[1]{{\color{red}#1}}   % shoul be in preamble ...?
+\providecommand{\blw}[1]{{\color{blue}#1}}
+ 
+ 
+Omdat $a^{\rod2} = \rod{a\cdot a}$ en $a^{\blw3}=\blw{a\cdot a\cdot a}$ volgt ook direct dat
+\[
+\begin{array}{rcl}
+a^{\rod2}\cdot a^{\blw3} &=& (\rod{a\cdot a})(\blw{a\cdot a \cdot  a}) = \rod{a\cdot a} \cdot \blw{a\cdot a \cdot  a} = a^{\rod2+\blw3} = a^5 \\
+(a^{\rod2})^{\blw3} &=& (\rod{a\cdot a})^{\blw3} = (\rod{a\cdot a})(\rod{a\cdot a})(\rod{a\cdot a}) = a^{\rod2\cdot\blw3} = a^6 \\
+a^{\blw3}\cdot b^{\blw3} &=& (\blw{a\cdot a\cdot a})(\blw{b\cdot b \cdot  b}) = (a\cdot b)(a\cdot b)(a\cdot b) = (a\cdot b)^{\blw3}
+\end{array}
+\]
+maar een uitdrukking als $a^2\cdot b^3$ kan je niet schrijven als één macht, wel als $(a\cdot b)^2\cdot b$.
+ 
+In het algemeen gelden volgende rekenregels:
+ 
+     
+\begin{proposition}[Rekenregels machten] \label{eig:rekenregels machten}\nl
+     
+    Voor alle $a,b,x,y\in\R$ en $m,n\in\N$ geldt:
+{
+%   \savebox\strutbox{$\vphantom{\dfrac11^n}$}   % hack; doesn't work in html
+    \[
+\begin{array}{rll}
+    xa^{r} + ya^r & = (x+y)a^r & \text{(som van}\textit{ gelijke }\text{machten)} \\
+    a^{m}a^{n}  & = a^{m+n}            & \text{(product van machten met zelfde grondtal)} \\
+    (ab)^n      & = a^nb^n             & \text{(macht van product)}\\
+    \left(a^{m}\right)^{n} & = a^{mn}  & \text{(macht van een macht)} \\
+    \\
+    \dfrac{a^{m}}{a^{n}}    & = a^{m-n} & \text{als }a\neq0 \\[5mm]
+    \left(\dfrac{a}{b}\right)^{n} & = \dfrac{a^{n}}{b^{n}} & \text{als }b\neq0
+\end{array}
+\]
+    Dezelfde regels gelden voor \textit{gehele} $m,n\in\Z$ zolang het grondtal niet nul is bij negatieve exponenten.
+ 
+    Dezelfde regels gelden ook voor \textit{reële} $m,n\in\R$ voor zover ze betekenis hebben (zie \hyperref[def:machten met rationale exponent]{verder}).   % ref onzichtbaar als geprint?
+}
+\end{proposition}
+ 
+\begin{xmuitweiding}[Een bewijs van de rekenregels]\nl
+    De eerste rekenregel is gewoon het uitwerken van haakjes. Voor de overige rekenregels geven we het bewijs voor $x,y\in\R$ en $m,n\in\N$. Dit bestaat telkens uit een eenvoudige toepassing van de definitie en de rekenregels voor producten:
+    %(dus: commutativiteit en associativiteit):
+    \[
+    \begin{array}{rl}
+        x^{m}x^{n} & = \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n \text{ factoren}}\cdot \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{m \text{ factoren}}
+            %\underset{(\cdot \text{ is assoc.})}{=}
+            =
+             \underbrace{(x\cdot x\cdot\ldots \cdot x)}_{n+m \text{ factoren}}
+            =  x^{m+n} \\ \\
+        (xy)^{n} 
+          & = \underbrace{(xy)\cdot (xy)\cdot\ldots \cdot (xy)}_{n \text{ factoren}}
+            %\underset{(\cdot \text{ is assoc. en comm.})}{=}
+            =
+             \underbrace{(x\cdot x\cdot\ldots \cdot x )}_{n \text{ factoren}} \cdot \underbrace{(y\cdot y\cdot\ldots \cdot y)}_{n\text{ factoren}} =  x^ny^n  \\ \\
+        (x^m)^{n} 
+          & = \underbrace{x^m\cdot x^m \cdot\ldots \cdot x^m}_{n \text{ factoren}}
+            = \underbrace{\underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}\cdot\ldots \cdot \underset{m \text{ factoren}}{(x\cdot x\cdot\ldots \cdot x)}}_{n \text{ factoren}}
+            = \underbrace{x\cdot x\cdot\ldots \cdot x}_{n\cdot m\text{ factoren}}
+            =  x^{mn}  \\ \\
+         & \text{ Men kan bovenstaande uitdrukkingen ook bewijzen voor $m,n \in\Z$ en dan volgt ook dat } \\
+        \frac{x^{m}}{x^{n}}   
+          & \underset{(\text{def. $x^{-n}$})}{=} x^m \cdot x^{-n} 
+          \underset{\text{(zie boven)}}{=} x^{m-n} \\ \\
+        \left(\frac{x}{y}\right)^n   
+          & = (x\cdot y^{-1})^n = x^n\cdot y^{-n} = \frac{x^n}{y^n}  
+    \end{array}
+    \]
+\end{xmuitweiding}
+ 
+ 
+\begin{basicSkip}
+\begin{exercise}Bereken volgende machten. \nl
+\begin{xmmulticols}
+\begin{question} $2^2\cdot2^3 = 2^{\answer[onlineshowanswerbutton]{5}}$\end{question}% als ik hier op antwoord tonen klik lijkt dit ineens te verdwijnen.
+\begin{question} $(2^2)^3 = 2^{\answer[onlineshowanswerbutton]{6}}$\end{question}
+\begin{question} $2^{(2^3)} = 2^{\answer[onlineshowanswerbutton]{8}}$\end{question}
+\begin{question} $\dfrac{2^{1302}}{2^{1299}} = 2^{\answer[onlineshowanswerbutton]{3}}$\end{question}
+\begin{question} $ 1302^5\cdot 2^5 = \answer[onlineshowanswerbutton]{2604}^5$\end{question}
+\end{xmmulticols}
+\end{exercise}
+\end{basicSkip}
+ 
+\begin{example} Bereken volgende machten.
+    \begin{enumerate}
+    \item $\left(\left(\frac{1}{2}\right)^{2}\right)^{-3} = \left(\frac12\right)^{-6}  = 2^6 = 64$
+     
+\item  $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)^{2} = \frac{\left( \frac12 \right)^2}{\left( \frac13 \right)^2} =\frac{\frac14}{\frac19}=\frac14 \cdot 9 =\frac{9}{4}$
+     
+\end{enumerate}
+\end{example}  
+ 
+\xmsection{Machten met een strikt positief reëel grondtal en een rationale exponent}
+ 
+Als we ons beperken tot positieve grondtallen, kunnen we de machtsverheffing  eenvoudig verder veralgemenen: we definiëren eerst $a^{\frac1n}$, dan $a^{\frac mn} = a^q,\text{met } q\in\Q$, en tenslotte zelfs $a^r,\text{met } r\in\R$.
+  
+ 
+\begin{definition}[Machtsverheffing met grondtal in $\Rplus$ en exponent in $\Q$.] \label{def:machten met rationale exponent} \nl
+     
+    Zij $a,b\in\Rplus$ en $n\in\Nnul$, $m\in\Z$.
+     
+    De macht $a^{\frac{1}{n}}$ met grondtal $a$ en exponent $\ds\frac{1}{n}$ wordt
+    gedefinieerd als het uniek positief re\"eel getal $b$ waarvan de $n$-de
+    macht gelijk is aan $a$. In symbolen:
+    \[
+    \important{b = a^\frac 1n \iff b^n = a}\, .
+    \]
+ 
+     
+    We noemen $a^{\frac{1}{n}}$ de \textbf{$n$-de machtswortel} uit $a$, of de $n$-de wortel uit $a$ en noteren
+    \[
+        \important{\sqrt[n]{a} \perdef a^\frac 1n}\, .
+    \]
+    We definiëren voor $a\in \Rnulplus$ ook
+    \[a^{\frac{m}{n}}\perdef \left(a^{\frac{1}{n}}\right)^m.\]
+\end{definition}
+ 
+ Deze definitie is enkel zinvol als een dergelijk positief reëel getal $b$ \textit{bestaat} en \textit{uniek} is. Precies om dat te garanderen moet de definitie voor \textit{even} $n$ beperkt worden tot \textit{positieve} $a$ en $b$. Inderdaad, voor negatieve $a$ \textit{bestaat} er immers niet altijd een geschikte $b$, want er bestaat bv. geen $b\in\R$ zodat $b^2 = -2$. En als het getal $b$ niet beperkt wordt tot de \textit{positieve} getallen, dan is dergelijke $b$ niet \textit{uniek}, want bijvoorbeeld zowel $b=2$ als $b=-2$ voldoen aan $b^2=4$.
+\\
+Voor \textit{oneven} machtswortels stelt dit probleem zich niet: $\sqrt[3]{8} = 8^{\frac13}=2$ en $\sqrt[3]{-8}=(-8)^{\frac13}=-2$.
+Dus als $n$ oneven is definieert de formule $b = a^\frac 1n \iff b^n = a$ ook $n$-de machtswortels van \textit{negatieve} getallen.
+ 
+\begin{remark} \
+\begin{enumerate}
+    \item Voor $n=2$ schrijven we gewoon $\sqrt{a}$ in plaats van $\sqrt[2]{a}$.
+         
+    \item Onmiddellijke gevolgen van de definities:
+    \begin{itemize}
+%       \item $\ds a^{\frac{1}{n}}=\sqrt[n]{a}$ voor alle $a\in\Rnulplus$ en alle   $n\in\Nnul$, i.h.b.~hebben we
+%       \item $\ds a^{\frac{1}{2}}=\sqrt{a}$ voor alle $a\in\Rnulplus$.
+        \item $\ds a^{-\frac{1}{n}}=\frac{1}{\sqrt[n]{a}}=\sqrt[n]{\frac{1}{a}}=(\sqrt[n]{a})^{-1}$ voor alle $a\in\Rnulplus$ en alle $n\in\Nnul$
+        \item $\ds a^{\frac{m}{n}}=\left(\sqrt[n]{a}\right)^m=\sqrt[n]{a^m}$ voor alle $a\in\Rnulplus$, alle $m\in\Z$ en alle $n\in\Nnul$
+        \item $1^q=1$ voor alle $q\in\Q$.
+    \end{itemize}
+    \end{enumerate}
+\end{remark}
+ 
+Ook voor machten met rationale exponenten blijven de gebruikelijke
+rekenregels gelden. Zo gelden bijvoorbeeld volgende rekenregels voor vierkantswortels, met $x \in \Rplus, y \in \Rnulplus$.
+\[
+\important{
+    \begin{array}{lll}   
+        \sqrt{xy} = \sqrt{x}\sqrt{y}, \quad  &
+        \frac{\sqrt{x}}{\sqrt{y}} = \sqrt{\frac xy}, \quad  &
+        a\sqrt{x} + b\sqrt{x} = (a+b)\sqrt{x}
+    \end{array}
+}
+\]
+ 
+\begin{remark}[vaak gemaakte fouten bij vierkantswortels]\nl
+     
+    \begin{itemize}
+        \item  $\sqrt{a+b} \neq \sqrt{a} + \sqrt{b}$
+         
+        want bv $\sqrt{9+16}=\sqrt{25} = 5$ en $\sqrt 9 + \sqrt{16} = 3 + 4 = 7$
+        \item $a^{-2} \neq a^{\frac12}$
+         
+        want bv $5^{-2}= \frac{1}{5^2} = \frac{1}{25}$ en $5^{\frac12}=\sqrt5$
+        \item $\sqrt{(-3)^2} \neq -3$
+         
+        want $\sqrt{(-3)^2}=\sqrt{9}=3$. Voor $a \in \Rplus$ geldt wel dat $\sqrt{a^2} =a$.
+    \end{itemize}
+     
+    \end{remark}
+  
+%\begin{xmuitweiding}[Machten met negatieve grondtallen] \
+%   Voor negatieve grondtallen is de definitie van machten met rationale exponenten wat subtieler, en we zullen er hier niet verder op ingaan. Het kan volstaan op te merken dat $-8$ geen vierkantswortel heeft, maar wel een (negatieve!) derdemachtswortel (namelijk $-2$, want $(-2)^3 = -8$). Maar, als we negatieve wortels toelaten, dan heeft $4$ weer twee mogelijke wortels, namelijk $2$ en $-2$. 
+%          
+%   De definitie gebruikt een veel voorkomend wiskundig paradigma: we willen een nieuw begrip $X$  definiëren door een voorwaarde te geven waaraan $X$ moet voldoen. Als we ten eerste kunnen bewijzen dat er inderdaad zo'n $X$ bestaat (existentie), en ten tweede dat zo'n $X$ uniek is (uniciteit), dan hebben we een goede definitie (we zeggen: 'begrip $X$ is goed gedefinieerd').
+%  
+%   Voorbeelden van dergelijke definities:
+%   \begin{enumerate}
+%       \item \textit{negatieve getallen}: als $a\in\N$, dan definiëren we $-a$ als het unieke getal $b$ zodat $a + b = 0$.
+%       \item \textit{logaritme}: als $a,x\in\Rplus$, dan definiëren we ${}\log_a(x)$ als het unieke getal $b$ zodat $a^b = x$. 
+%       \item Niet-voorbeeld voor \textit{vierkantswortel}: als $a\in\R$ dan zouden we na\"iefweg de vierkantswortel $\sqrt{a}$ kunnen proberen definëren als het unieke reëel getal $b\in\R$ zodat $b^2 = a$. Deze definitie is fout,  ten eerste omdat voor negatieve $a$ een dergelijke $b$ niet bestaat, en ten tweede omdat er voor positieve $a$ steeds twee dergelijke $b$'s zijn (namelijk een positieve en een negatieve 'vierkantswortel'). In bovenstaande definitie is dit probleem opgelost door zowel $a$ als $b$ te beperken tot \textit{positieve} reële getallen: in dat geval hebben we zowel existentie als uniciteit. Maar, de oplossing voldoet niet helemaal, want we zouden graag vierkantswortels kunnen trekken uit negatieve getallen. Dat kan, als we complexe getallen toelaten. Maar, dan wordt de uniciteit problematisch: voor complexe getallen heeft het begrip '\textit{positieve} wortel' dan weer geen betekenis meer.  \todo{referentie wortels van complexe getallen toevoegen ?}
+%   \end{enumerate}
+%\end{xmuitweiding}
+ 
+\begin{example} Vereenvoudig volgende machten met rationale exponent.(met $x \in \Rnulplus$)\nl
+    \begin{enumerate}
+        \item $\sqrt[3]{8} \cdot \sqrt{64} = 8^{\frac{1}{3}}\cdot \sqrt{8^{2}}=8^{\frac{1}{3}}\cdot8=8^{\frac{1}{3}+1}=8^{\frac{4}{3}}=(\sqrt[3]{8})^4=2^4=16$
+        \item $\frac{\sqrt[4]{x^{3}}}{x} = x^{\frac{3}{4}-1}=x^{\frac{-1}{4}}=\frac{1}{\sqrt[4]{x}}$
+        \item $\left(x^{3}\cdot \sqrt[4]{x}\right)^{2} = x^{6}\cdot \left(\sqrt[4]{x}\right)^{2}=x^{6}\cdot \left(x^{\frac{1}{4}}\right)^{2}=x^{6}\cdot x^{\frac{2}{4}}=
+        x^{6+\frac{1}{2}}=x^{\frac{13}{2}}=\sqrt{x^{13}}$
+    \end{enumerate}
+    \end{example}
+ 
+\begin{basicSkip}
+\begin{exercise} Vereenvoudig (met $x,y \in \Rnulplus$):
+    \begin{question}
+ $\frac{4}{\sqrt{8}}= \answer{\sqrt{2}}$
+    \begin{oplossing} $\frac{2^{2}}{8^{\frac{1}{2}}}=2^{2}(2^{-3})^{\frac{1}{2}}=2^{2-\frac{3}{2}}=
+    2^{\frac{1}{2}}=\sqrt{2}$
+\end{oplossing}
+\end{question}
+     
+\begin{question} $y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4}=\answer{1}$
+    \begin{oplossing} $y^{2} \cdot \left(\frac{\sqrt{x^{2}y}}{xy}\right)^{4} = y^{2} \cdot \frac{\left(x^{2}y\right)^{\frac{4}{2}}}{x^{4}y^{4}}=y^{2}\cdot \frac{x^{4}y^{2}}{x^{4}y^{4}}
+        =y^{2} \cdot \frac{1}{y^{2}}=1$
+    \end{oplossing}
+    \end{question}
+\begin{question} $\sqrt{48 x^{9}y^{4}}= \answer[onlinenoinput]{4 x^{4}y^{2}\sqrt{3x}}$
+        \begin{oplossing} $\sqrt{48 x^{9}y^{4}} =
+        \sqrt{(16 \cdot 3)(x^{8} \cdot
+            x)y^{4}}=\sqrt{16 \cdot 3\cdot (x^{4})^{2}\cdot x\cdot
+            (y^{2})^{2}}=4 x^{4}y^{2}\sqrt{3x}$
+        \end{oplossing}
+\end{question}
+\end{exercise}
+\end{basicSkip}
+ 
+\xmsection{Machten met een strikt positief re\"eel grondtal en een re\"ele exponent}\label{machten-r}
+Men kan ook $a^r$ definiëren met $a\in\Rnulplus$
+en $r\in\R$ (dus uitdrukkingen zoals $2^{\sqrt{3}}$, $\pi^{\sqrt{5}}$ en $\sqrt{7}^{\sqrt{\pi}}$). We geven de definitie hier niet in detail. We zullen later reële exponenten nodig hebben bij het bestuderen van zogenaamde exponentiële functies zoals $x\mapsto 2^x$.
+ 
+Ook voor machten met re\"ele exponenten blijven de gebruikelijke
+rekenregels gelden.
+ 
+\begin{xmuitweiding}[Definitie machten met niet-rationale exponenten]
+Details vind je in wat meer gevorderde cursussen wiskunde, maar hier schetsen we kort \'{e}\'{e}n mogelijke manier om een precieze betekenis te geven
+aan de uitdrukking $a^r$ met $a\in\Rnulplus$ en $r\in\R$.
+ 
+Neem dus $a\in\Rnulplus$ en $r\in\R$. We weten reeds dat $a^q$
+goed gedefinieerd is voor elk rationaal getal $q$. Elk re\"eel getal $r$ kan je \lq oneindig goed\rq\
+ benaderen d.m.v.~rationale getallen. Concreet wil dit zeggen
+dat gegeven een re\"eel getal $r$ er een oneindige rij
+$q_1,q_2,q_3,\ldots$ bestaat van rationale getallen die $r$ met
+steeds hogere nauwkeurigheid benaderen, zodat uiteindelijk elke
+gewenste nauwkeurigheid vanaf een bepaald getal in de rij bereikt
+wordt. Men zegt in dit geval dat de rij $q_1,q_2,q_3,\ldots$ naar
+$r$ \emph{convergeert} en men noteert dit met \lq $q_n\to r$ als
+$n\to\infty$\rq\ of met $\lim_{n\to\infty}q_n=r$.
+ 
+Stel nu dat $q_1,q_2,q_3,\ldots$ zo'n rij is die naar $r$
+convergeert. We kunnen dan voor elke $q_n$ in die rij de macht
+$\ds a^{q_n}$ beschouwen. Op die manier bekomen we een nieuwe rij
+$a^{q_1},a^{q_2},a^{q_3},\ldots$   
+%%%%%%\rule{0ex}{0ex}\\ [-3ex]
+Men kan bewijzen dat ook deze rij steeds
+zal convergeren naar een zeker re\"eel getal $s$ en dat deze
+limiet niet afhangt van de keuze van de rij $q_1,q_2,q_3,\ldots$
+die we gebruikt hebben  om $r$ te benaderen. Dit laat ons dan toe
+om de macht $a^r$ te defini\"eren als dat getal $s$ dat je op die
+manier bekomt en dat enkel afhangt van $a$ en $r$.
+\end{xmuitweiding}
+ 
+ 
+ 
+\end{document}
